@@ -98,8 +98,10 @@ animations = [{
 }]
 
 [node name="Player" type="Node2D"]
+position = Vector2(1, -185)
 
 [node name="PlayerBody" type="CharacterBody2D" parent="."]
+position = Vector2(-249, 26)
 script = ExtResource("1_qiybs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBody"]
@@ -111,3 +113,15 @@ position = Vector2(0, -22)
 sprite_frames = SubResource("SpriteFrames_2cjp1")
 animation = &"idle"
 autoplay = "idle"
+
+[node name="PlayerCamera" type="Camera2D" parent="PlayerBody"]
+position = Vector2(238, 38)
+scale = Vector2(0.561326, 0.988805)
+zoom = Vector2(2, 2)
+limit_top = -10000023
+limit_bottom = 0
+limit_smoothed = true
+
+[node name="Timer" type="Timer" parent="PlayerBody/PlayerCamera"]
+wait_time = 0.3
+one_shot = true
